@@ -24,6 +24,8 @@
 #include "Mouse.h"
 #include "Graphics.h"
 
+#include "Vector2D.h"
+
 class Game
 {
 public:
@@ -42,5 +44,6 @@ private:
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
+	Vector2D v;
 	/********************************/
 };
