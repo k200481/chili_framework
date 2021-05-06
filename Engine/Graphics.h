@@ -25,6 +25,9 @@
 #include "ChiliException.h"
 #include "Colors.h"
 
+#include "Vector2D.h"
+#include "RectangleClass.h"
+
 class Graphics
 {
 public:
@@ -58,6 +61,8 @@ public:
 	}
 	void PutPixel( int x,int y,Color c );
 	~Graphics();
+
+	void DrawRectangle(const RectangleClass& rect, Color c);
 private:
 	Microsoft::WRL::ComPtr<IDXGISwapChain>				pSwapChain;
 	Microsoft::WRL::ComPtr<ID3D11Device>				pDevice;

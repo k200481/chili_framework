@@ -252,6 +252,20 @@ Graphics::~Graphics()
 	if( pImmediateContext ) pImmediateContext->ClearState();
 }
 
+void Graphics::DrawRectangle(const RectangleClass& rect, Color c)
+{
+	//make sure no attempt to draw outside of window
+	assert(rect.IsContainedBy(RectangleClass(Vector2D(0, 0),
+		Vector2D(Graphics::ScreenWidth - 1, Graphics::ScreenHeight - 1))));
+	const int xEnd = int( rect.right );
+	const int yEnd = int( rect.bottom );
+	for ( int y = int( rect.top ); y < yEnd; y++ ) {
+		for ( int x = int( rect.left ); x < xEnd; x++ ) {
+			PutPixel( x, y, c );
+		}
+	}
+}
+
 void Graphics::EndFrame()
 {
 	HRESULT hr;

@@ -25,6 +25,7 @@
 #include "Graphics.h"
 
 #include "Vector2D.h"
+#include "RectangleClass.h"
 
 class Game
 {
@@ -44,6 +45,5 @@ private:
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
-	Vector2D v;
 	/********************************/
 };
